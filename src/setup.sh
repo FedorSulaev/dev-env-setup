@@ -14,5 +14,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 p10k_plugins+=" zsh-autosuggestions"
 # Enable all p10k plugins
 sed "s|plugins=(git)|plugins=($p10k_plugins)|" -i ~/.zshrc
+# Tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+cp dev-env-setup/config/.tmux.conf $HOME/.tmux.conf
 # Setup complete
 zsh
