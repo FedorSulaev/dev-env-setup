@@ -17,5 +17,15 @@ sed "s|plugins=(git)|plugins=($p10k_plugins)|" -i ~/.zshrc
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cp dev-env-setup/config/.tmux.conf $HOME/.tmux.conf
+~/.tmux/plugins/tpm/bin/install_plugins
+# Tmuxifier init
+init_line='eval "$(tmuxifier init -)"'
+tmfr_path='export PATH="$HOME/.tmux/plugins/tmuxifier/bin"'
+# Check if tmuxifier set up in .zshrc
+if ! grep -qF "$init_line" ~/.zshrc; then
+    # Append to .zshrc
+    echo "$tmfr_path" >> ~/.zshrc
+    echo "$init_line" >> ~/.zshrc
+fi
 # Setup complete
 zsh
