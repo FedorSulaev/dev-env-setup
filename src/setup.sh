@@ -20,7 +20,7 @@ cp dev-env-setup/config/.tmux.conf $HOME/.tmux.conf
 ~/.tmux/plugins/tpm/bin/install_plugins
 # Tmuxifier init
 init_line='eval "$(tmuxifier init -)"'
-tmfr_path='export PATH="$HOME/.tmux/plugins/tmuxifier/bin"'
+tmfr_path='export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"'
 # Check if tmuxifier set up in .zshrc
 if ! grep -qF "$init_line" ~/.zshrc; then
     # Append to .zshrc
