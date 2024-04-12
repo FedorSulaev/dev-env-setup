@@ -27,5 +27,12 @@ if ! grep -qF "$init_line" ~/.zshrc; then
     echo "$tmfr_path" >> ~/.zshrc
     echo "$init_line" >> ~/.zshrc
 fi
+# Lazygit
+echo 'export PATH="$PATH:/usr/local/go/bin"' >> ~/.zshrc
+echo 'export PATH="$PATH:$HOME/go/bin"' >> ~/.zshrc
+git clone https://github.com/jesseduffield/lazygit.git
+cd lazygit
+/usr/local/go/bin/go install
+cd $HOME
 # Setup complete
 zsh
