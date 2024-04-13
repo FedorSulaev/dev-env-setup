@@ -34,5 +34,11 @@ git clone https://github.com/jesseduffield/lazygit.git
 cd lazygit
 /usr/local/go/bin/go install
 cd $HOME
+# Nvim
+git clone https://github.com/neovim/neovim
+git checkout stable
+cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo
+make install
+cd $HOME
 # Setup complete
 zsh
